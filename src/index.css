@@ -1,15 +1,17 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* font-family: "Roboto", serif; */
-    font-family: "Oswald", serif;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
+  /* font-family: "Oswald", serif; */
 }
-ol,ul,li,a{
-    text-decoration: none;
-    list-style: none;
+ol,
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
 }
-button{
-    cursor: pointer;
+button {
+  cursor: pointer;
 }

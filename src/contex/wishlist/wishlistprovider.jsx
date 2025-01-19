@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import WishlistContext from './wishlistcontext';
 import useLocalStorage from 'use-local-storage';
+import WishlistContext from './wishlistcontext';
 
 const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useLocalStorage('wishlist',[]);

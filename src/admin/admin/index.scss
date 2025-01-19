@@ -1,62 +1,74 @@
-
-.admin_page{
+.admin_page {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 50px auto;
+  .admin_page_top {
     display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin: 50px auto;
-
-.admin_add_btn{
-    color: #000;
-    padding: 10px 20px;
-    background-color: rgb(217, 230, 235);
+    justify-content: space-between;
     margin: 50px 0;
-    display: flex;
-    align-self: flex-end;
-    max-width: max-content;
-}
-    table {
+
+    .admin_add_btn {
+      color: #000;
+      padding: 10px 20px;
+      background-color: rgb(217, 230, 235);
+      max-width: max-content;
+    }
+    .sortbtns {
+      display: flex;
+      gap: 20px;
+      button {
+        color: #000;
+        padding: 10px 20px;
+        background-color: rgb(217, 230, 235);
+        border: none;
+      }
+    }
+  }
+
+  table {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+    thead {
+      tr th {
         border: 1px solid black;
-        border-collapse: collapse;
-  
-        thead {
-          tr th {
-            border: 1px solid black;
-            padding: 5px 20px;
-            text-align: center;
-            background-color: rgb(217, 230, 235);
+        padding: 5px 20px;
+        text-align: center;
+        background-color: rgb(217, 230, 235);
+      }
+    }
+    tbody {
+      tr {
+        td {
+          border: 1px solid black;
+          padding: 5px 20px;
+          text-align: center;
+          img {
+            width: 150px;
           }
         }
-        tbody {
-          tr {
-            td {
-              border: 1px solid black;
-              padding: 5px 20px;
-              text-align: center;
-              img {
-                width: 150px;
-              }
-            }
-            .product_name a {
-              color: #000;
-            }
-            .product_name a:hover {
-              text-decoration: underline;
-            }
-            .delete_btn {
-              svg {
-                color: red;
-                font-size: 20px;
-                cursor: pointer;
-              }
-            }
-            .update_btn {
-              svg {
-                color: blue;
-                font-size: 20px;
-                cursor: pointer;
-              }
-            }
+        .product_name a {
+          color: #000;
+        }
+        .product_name a:hover {
+          text-decoration: underline;
+        }
+        .delete_btn {
+          svg {
+            color: red;
+            font-size: 20px;
+            cursor: pointer;
+          }
+        }
+        .update_btn {
+          svg {
+            color: blue;
+            font-size: 20px;
+            cursor: pointer;
           }
         }
       }
+    }
+  }
 }

@@ -15,15 +15,35 @@ const Admin = () => {
       method: "DELETE",
     });
   }
+  function sortLower() {
+    setProducts([...products].sort((a, b) => (a.price > b.price ? 1 : -1)));
+  }
+  function sortHigher() {
+    setProducts([...products].sort((a, b) => (a.price < b.price ? 1 : -1)));
+  }
+  function sortAtoZ() {
+    setProducts([...products].sort((a, b) => (a.name > b.name ? 1 : -1)));
+  }
+  function sortZtoA() {
+    setProducts([...products].sort((a, b) => (a.name < b.name ? 1 : -1)));
+  }
   return (
     <>
       <Helmet>
         <title>Admin</title>
       </Helmet>
       <div className="admin_page">
-        <Link className="admin_add_btn" to={"/adminadd"}>
-          Add New Product
-        </Link>
+        <div className="admin_page_top">
+          <div className="sortbtns">
+            <button onClick={() => sortLower()}>Lower Price</button>
+            <button onClick={() => sortHigher()}>Higher Price</button>
+            <button onClick={() => sortAtoZ()}>A to Z</button>
+            <button onClick={() => sortZtoA()}>Z to A</button>
+          </div>
+          <Link className="admin_add_btn" to={"/adminadd"}>
+            Add New Product
+          </Link>
+        </div>
 
         <table>
           <thead>
@@ -50,12 +70,13 @@ const Admin = () => {
                     <Link to={`/admindetails/${item._id}`}>{item.name}</Link>
                   </td>
                   <td className="product_price">${item.price} </td>
-                  <td className="delete_btn" >
-                    <FaRegTrashAlt onClick={()=>deleteProduct(item) } />
+                  <td className="delete_btn">
+                    <FaRegTrashAlt onClick={() => deleteProduct(item)} />
                   </td>
                   <td className="update_btn">
-                  <Link to={`/adminupdate/${item._id}`}><FaPen /></Link>
-               
+                    <Link to={`/adminupdate/${item._id}`}>
+                      <FaPen />
+                    </Link>
                   </td>
                 </tr>
               );

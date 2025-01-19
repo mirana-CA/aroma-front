@@ -3,8 +3,8 @@ import "./index.scss";
 import { Helmet } from "react-helmet";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
-import WishlistContext from "../../contex/wishlistcontext";
 import { useParams } from "react-router-dom";
+import WishlistContext from "../../contex/wishlist/wishlistcontext";
 const Details = () => {
   let params = useParams();
   const [product, setProduct] = useState([]);
@@ -23,11 +23,14 @@ const Details = () => {
       <div className="product" key={product._id}>
         <img src={product.image} alt={product.name} />
         <div className="product_category">{product.category} </div>
-        <div className="product_name">{product.name}
-        </div>
+        <div className="product_name">{product.name}</div>
         <div className="product_price">{product.price} </div>
         <div className="heart_icon" onClick={() => addWistlist(product)}>
-          {wishlist.find((i) => i._id == product._id) ? <FaHeart /> : <CiHeart />}
+          {wishlist.find((i) => i._id == product._id) ? (
+            <FaHeart />
+          ) : (
+            <CiHeart />
+          )}
         </div>
       </div>
     </>
